@@ -8,8 +8,36 @@ app.all("/secret", (req, res) => {
     console.log("Accessing the secret section");
 });
 
-app.get("/data/([$])book", (req, res) => {
-    res.send("Accessing /data/$book");
+// app.get("/data/([$])book", (req, res) => {
+//     res.send("Accessing /data/$book");
+// });
+
+// app.get("/random.txt", (req, res) => {
+//     res.send("random.txt");
+// });
+
+// app.get("/ab?cd", (req, res) => {
+//     res.send("Response for /abcd and /acd");
+// });
+
+// app.get("/abc+", (req, res) => {
+//     res.send("Response for /abc+");
+// });
+
+// app.get("/abcde*", (req, res) => {
+//     res.send("Response for /abcde*");
+// });
+
+// app.get("/ab(cd)?efg", (req, res) => {
+//     res.send("Response for /abcdefg and /abefg");
+// });
+
+// app.get(/a/, (req, res) => {
+//     res.send("Response for any path that has letter 'a'")
+// })
+
+app.get(/.*fly$/, (req, res) => {
+    res.send("Response for /.*fly$");
 });
 
 app.listen(PORT, () => console.log(`App running at http://localhost:${PORT}`));
