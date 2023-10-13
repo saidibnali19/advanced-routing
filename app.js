@@ -8,4 +8,8 @@ app.all("/secret", (req, res) => {
     console.log("Accessing the secret section");
 });
 
+app.get("/data/([$])book", (req, res) => {
+    res.send("Accessing /data/$book");
+});
+
 app.listen(PORT, () => console.log(`App running at http://localhost:${PORT}`));
