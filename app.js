@@ -3,9 +3,11 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-const birds = require("./birds")
+const birds = require("./birds");
+app.use("/birds", birds);
 
-app.use("/birds", birds)
+const blog = require("./blog");
+app.use("/blog", blog);
 
 app.all("/secret", (req, res) => {
     res.send("Secret section");
@@ -113,8 +115,5 @@ app.route("/book")
     .put((req, res) => {
         res.send("Update the book");
     });
-
-const blog = require("./blog")
-app.use("/blog", blog)
 
 app.listen(PORT, () => console.log(`App running at http://localhost:${PORT}`));
